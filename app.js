@@ -104,7 +104,7 @@
 
         ctx.save();
 
-        ctx.fillStyle = 'green';
+        ctx.fillStyle = 'blue';
         ctx.translate(person.x, person.y);
         if (person.duck) {
             ctx.fillRect(-25, -50, 50, 50);
