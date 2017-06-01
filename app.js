@@ -19,7 +19,8 @@
         y: 300,
         velx: 0,
         vely: 0,
-        onGround: false
+        onGround: false,
+        lit: false
     };
 
     // Controller
