@@ -20,7 +20,7 @@
         velx: 0,
         vely: 0,
         onGround: false,
-        lit: false
+        duck: false
     };
 
     // Controller
@@ -75,6 +75,11 @@
                 person.velx = constants.maxSpeed;
             }
         }
+        if (keysDown["ArrowDown"]) {
+            person.duck = true;
+        } else {
+            person.duck = false;
+        }
         if (keysDown["Space"]) {
             if (person.onGround) {
                 person.onGround = false;
@@ -101,7 +106,11 @@
 
         ctx.fillStyle = 'green';
         ctx.translate(person.x, person.y);
-        ctx.fillRect(-25, -100, 50, 100);
+        if (person.duck) {
+            ctx.fillRect(-25, -50, 50, 50);
+        } else {
+            ctx.fillRect(-25, -100, 50, 100);
+        }
 
         ctx.restore();
     }
